@@ -26,16 +26,25 @@ benny = User("Benny Bob", "benny@python.com")
 adrien.make_deposit(305)
 adrien.display_user_balance()
 
-mrNibbles.make_deposit(1200)
+mrNibbles.make_deposit(1000)
+mrNibbles.make_deposit(400)
+mrNibbles.make_withdrawal(100)
+mrNibbles.make_withdrawal(100)
 mrNibbles.display_user_balance()
 
-benny.make_withdrawal(7500)
+benny.make_deposit(1000)
+benny.make_withdrawal(1000)
+benny.make_withdrawal(1000)
+benny.make_withdrawal(6500)
 benny.display_user_balance()
 
 mrNibbles.make_withdrawal(400)
 mrNibbles.display_user_balance()
 
-adrien.make_deposit(400)
+adrien.make_deposit(200)
+adrien.make_deposit(200)
+adrien.make_deposit(200)
+adrien.make_withdrawal(200)
 adrien.display_user_balance()
 
 adrien.transfer_money(mrNibbles,100)
