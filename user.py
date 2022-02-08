@@ -11,13 +11,17 @@ class User:
         
     def make_deposit(self, amount):    # takes an argument that is the amount of the deposit
         self.account_balance += amount
+        return self
     def make_withdrawal(self,amount):
         self.account_balance -= amount
+        return self
     def display_user_balance(self):
         print(f"{self.name} Balance: {self.account_balance}")
+        return self
     def transfer_money(self, other_user, amount):
         self.account_balance = self.account_balance - amount
         other_user.account_balance = other_user.account_balance + amount
+        return self
 
 adrien = User("Adrien")
 mrNibbles = User("Mr. Nibbles", "nibbles@python.com")
@@ -26,27 +30,13 @@ benny = User("Benny Bob", "benny@python.com")
 adrien.make_deposit(305)
 adrien.display_user_balance()
 
-mrNibbles.make_deposit(1000)
-mrNibbles.make_deposit(400)
-mrNibbles.make_withdrawal(100)
-mrNibbles.make_withdrawal(100)
-mrNibbles.display_user_balance()
+mrNibbles.make_deposit(1000).make_deposit(400).make_withdrawal(100).make_withdrawal(100).display_user_balance()
 
-benny.make_deposit(1000)
-benny.make_withdrawal(1000)
-benny.make_withdrawal(1000)
-benny.make_withdrawal(6500)
-benny.display_user_balance()
+benny.make_deposit(1000).make_withdrawal(1000).make_withdrawal(1000).make_withdrawal(6500).display_user_balance()
 
-mrNibbles.make_withdrawal(400)
-mrNibbles.display_user_balance()
+mrNibbles.make_withdrawal(400).display_user_balance()
 
-adrien.make_deposit(200)
-adrien.make_deposit(200)
-adrien.make_deposit(200)
-adrien.make_withdrawal(200)
-adrien.display_user_balance()
+adrien.make_deposit(200).make_deposit(200).make_deposit(200).make_withdrawal(200).display_user_balance()
 
-adrien.transfer_money(mrNibbles,100)
-adrien.display_user_balance()
+adrien.transfer_money(mrNibbles,100).display_user_balance()
 mrNibbles.display_user_balance()
